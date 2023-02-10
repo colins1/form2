@@ -1,22 +1,20 @@
-import logo from './logo.svg';
+
+import React, { useState } from 'react';
+import Form from './component/Form';
+import List from './component/List';
 import './App.css';
+import './main.css';
 
 function App() {
+  const [form, setForm] = useState({
+    object: []
+  })
+
   return (
-    <form class="form-inline">
-  <div class="form-group">
-    <label class="sr-only" for="inputEmail">Email</label>
-    <input type="email" class="form-control" id="inputEmail" placeholder="Email"/>
-  </div>
-  <div class="form-group">
-    <label class="sr-only" for="inputPassword">Пароль</label>
-    <input type="password" class="form-control" id="inputPassword" placeholder="Пароль"/>
-  </div>
-  <div class="checkbox">
-    <label><input type="checkbox"/> Запомнить</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Войти</button>
-</form>
+    <div className="App">
+      <Form form={form} setForm={setForm}/>
+      <List form={form} setForm={setForm}/>
+    </div>
   );
 }
 
