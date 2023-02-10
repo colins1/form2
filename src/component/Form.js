@@ -3,9 +3,15 @@ import React from 'react';
 function Form ({form, setForm}) {
 
     function checkArray (event) {
-        let a = form.object
-        a.push({date:event.target[0].value, long:event.target[1].value})
-        return a.sort(sortItem);
+        let allItm = form.object
+        for(let key of allItm) {
+            if(key.date === event.target[0].value) {
+                key.long = Number(event.target[1].value) + Number(key.long) 
+                return allItm.sort(sortItem)
+            }
+        }
+        allItm.push({date:event.target[0].value, long:event.target[1].value})
+        return allItm.sort(sortItem);
     }
 
     const sortItem = (a, b) => {
