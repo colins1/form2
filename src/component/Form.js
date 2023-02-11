@@ -29,10 +29,10 @@ function Form ({form, setForm}) {
     return (
     <form className="form-inline" onSubmit={handleSubmit}>
         <div className="form-group" style={{margin: "20px"}}>
-        <input type="date" className="form-control" placeholder="Дата (ДД.ММ.ГГ)" required/>
+        <input type="date" className="form-control" required/>
         </div>
         <div className="form-group">
-        <input className="form-control" placeholder="Пройдено км" required/>
+        <input className="form-control" type="number" placeholder="Пройдено км" required/>
         </div>
         <button style={{margin: "20px"}} type="submit" className="btn btn-primary">OK</button>
     </form>
